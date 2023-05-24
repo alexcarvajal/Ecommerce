@@ -1,12 +1,11 @@
 import { useRoutes, BrowserRouter} from 'react-router-dom'
+import { CartProvider } from '../../Context'
 import Home from '../Home'
 import MyAccount from '../MyAccount'
 import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import Navbar from '../../Components/NAvbar'
-
-import { CartProvider } from '../../Context'
 import './App.css'
 
 const AppRoutes = () =>{
@@ -23,13 +22,11 @@ const AppRoutes = () =>{
 const App = ()=> {
   return (
     <CartProvider>
-
-   <BrowserRouter>
-      <AppRoutes />
-      <Navbar />
-   </BrowserRouter>
-
-   </CartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar />
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

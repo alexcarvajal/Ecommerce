@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unreachable */
+
 import { createContext,useState } from "react";
+
 export const CartContext = createContext()
 export const CartProvider = ({children}) =>{
 
@@ -9,28 +9,27 @@ export const CartProvider = ({children}) =>{
     const [count,setCount]=useState(0)
 
     //open and close de details window
-
-    const [detailOpen, setDetailOpen] = useState(false)
-    const openDetail = () => setDetailOpen(true)
-    const closeDetail = () => setDetailOpen(false)
+        const [isProductDetailOpen, setIsProductDetailOpen] = useState(false)
+        const openProductDetail = () => setIsProductDetailOpen(true)
+        const closeProductDetail = () => setIsProductDetailOpen(false)
 
     //Product detail- Show product
 
-/*     const[productShow, setProductShow]= useState({}) */
+    const[productToShow, setProductToShow]= useState({})
     // Add to cart
     const [cartProducts,setCartProducts]=useState([])
-
-    console.log("Numeros ",count)
     return(
         <CartContext.Provider value={{
             count,
             setCount,
-            openDetail,
-            closeDetail,
+            openProductDetail,
+            closeProductDetail,
+            isProductDetailOpen,
+            productToShow,
+            setProductToShow,
             cartProducts,
-            setCartProducts,
-        
-        }}>
+            setCartProducts
+            }}>
             {children}
         </CartContext.Provider>
     )
