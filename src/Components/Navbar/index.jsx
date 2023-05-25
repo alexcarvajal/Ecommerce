@@ -74,8 +74,11 @@ const Navbar = () =>{
                     </NavLink>
                 </li>
                 <li className="flex items-center ">
-                <ShoppingCartIcon className='h-6 w-6 text-black-500'></ShoppingCartIcon>  
+                <ShoppingCartIcon 
+                onClick={()=> {context.openCheckoutSideMenu()}}
+                className='h-6 w-6 text-black-500 cursor-pointer'></ShoppingCartIcon>  
                 <div>
+               
                 {context.count}
                     </div>
                 </li>

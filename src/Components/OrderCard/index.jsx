@@ -1,6 +1,6 @@
-import { XCircleIcon } from "@heroicons/react/24/solid"
+import { TrashIcon } from "@heroicons/react/24/solid"
 const OrderCard = props => {
-const{ title, imageUrl,price }=props
+const{ id, title, imageUrl, price, handleDelete }=props
 return(
     <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2">
@@ -11,8 +11,9 @@ return(
         </div>
         <div className="flex items-center gap-2">
             <p className="text-lg font-medium">$ {price}</p>
-            <XCircleIcon
-            className="h-6 w-6 text-slate-400 cursor-pointer" ></XCircleIcon>
+            <TrashIcon
+            onClick={()=> handleDelete(id)}
+            className="h-6 w-6 text-slate-700 cursor-pointer" ></TrashIcon>
         </div>
 
     </div>

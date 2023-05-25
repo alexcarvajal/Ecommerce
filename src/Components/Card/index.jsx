@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../../Context"
 import { PlusIcon } from '@heroicons/react/24/solid'
+import { CheckIcon }from '@heroicons/react/24/solid'
 
 const Card = (data) => {
 
@@ -21,6 +22,30 @@ const Card = (data) => {
 /*     console.log('Cart: ', context.cartProducts)
  */  }
 
+  const renderICon = (id) =>{
+    const isInCart = context.cartProducts.filter(product => product.id === id).length >0
+    if(isInCart){
+      return(
+      <>
+      <div
+      className='absolute top-0 right-0 flex justify-center items-center bg-green-600 w-6 h-6 rounded-full m-2 p-1'>
+      <CheckIcon  className='h-6 w-6 text-white'></CheckIcon></div>
+      </>
+     
+      )
+    }else{
+      return(
+        <>
+      <div
+      className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
+      onClick={(event) => addProductsToCart(event,data.data)}>
+          <PlusIcon  className='h-6 w-6 text-black'></PlusIcon>
+      </div>
+      </>
+      )
+    }
+  }
+
   return (
     <div 
     className ='bg-white cursor-pointer w-56 h-60 rounded-lg'
@@ -31,10 +56,8 @@ const Card = (data) => {
             {data.data.category}
             </span>
             <img className='w-full h-full object-cover rounded-lg' src={data.data.image} alt={data.data.title} />
-            <div
-          className='absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1'
-          onClick={(event) => addProductsToCart(event,data.data)}>
-              <PlusIcon  className='h-6 w-6 text-black'></PlusIcon></div>
+            {renderICon(data.data.id)}
+
         </figure>
         <p className='flex justify-between'>
             <span className=' text-sm font-light mr-2'>{data.data.title.slice(0,22)}</span>
