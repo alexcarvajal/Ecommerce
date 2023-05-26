@@ -23,6 +23,10 @@ export const CartProvider = ({children}) =>{
     
     // Add products to cart
     const [cartProducts,setCartProducts]=useState([])
+    //Order
+    const [order,setOrder]=useState([])
+
+
     return(
         <CartContext.Provider value={{
             count,
@@ -36,7 +40,9 @@ export const CartProvider = ({children}) =>{
             setCartProducts,
             isCheckoutSideMenuOpen,
             openCheckoutSideMenu,
-            closeCheckoutSideMenu
+            closeCheckoutSideMenu,
+            order,
+            setOrder
             }}>
             {children}
         </CartContext.Provider>

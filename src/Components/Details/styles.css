@@ -3,3 +3,27 @@
     top: 68px;
     height: calc(100vh - 68px);
 }
+
+.scroll-details {
+	overflow: scroll;
+}
+
+  /* Chrome, Edge, and Safari */
+  .scroll-details::-webkit-scrollbar {
+    width: 3px;
+		/* overflow-x: hidden; */
+  }
+
+  .scroll-details::-webkit-scrollbar-track {
+    background: #ffffff;
+		/* overflow-x: hidden; */
+  }
+
+  .scroll-details::-webkit-scrollbar-thumb {
+    background-color: #141414;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}

@@ -79,7 +79,7 @@ const Navbar = () =>{
                 className='h-6 w-6 text-black-500 cursor-pointer'></ShoppingCartIcon>  
                 <div>
                
-                {context.count}
+                {context.cartProducts.length}
                     </div>
                 </li>
               
