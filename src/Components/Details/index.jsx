@@ -4,10 +4,9 @@ import { XCircleIcon } from "@heroicons/react/24/solid";
 import "./styles.css";
 
 const Details = (props) => {
-  /* const context = useContext(CartContext) */
+
   const context = useContext(CartContext)
-  /*   console.log('Product to Show; ',context.productShow)
-   */ return (
+   return (
     <aside
       className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail scroll-details flex-col fixed right-0 border border-black rounded-lg bg-white`}
     >

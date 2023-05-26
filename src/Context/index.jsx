@@ -36,7 +36,7 @@ export const CartProvider = ({children}) =>{
       const [searchByTitle, setSearchByTitle] = useState(null);
       //Get Products by Category
       const [searchByCategory, setSearchByCategory] = useState(null);
-    /*   console.log(searchByCategory) */
+    
        // Filter items by title
       const filteredItemsByTitle = (items,searchByTitle ) =>{
         return items?.filter(item =>item.title.toLowerCase().includes(searchByTitle.toLowerCase()))
@@ -74,7 +74,7 @@ export const CartProvider = ({children}) =>{
         if(!searchByCategory && !searchByTitle) setFilteredItems(filterBy(null,items,searchByTitle,searchByCategory))
       },[items,searchByTitle,searchByCategory])
 
-      console.log(filteredItems)
+
     return(
         <CartContext.Provider value={{
             count,
